@@ -1,0 +1,17 @@
+<template>
+  <button type="button" @click="handleClick">{{ label }}</button>
+</template>
+
+<script>
+export default {
+  name: "ButtonDecrease",
+  props: {
+    label: String
+  },
+  methods: {
+    handleClick() {
+      this.$emit("buttonClicked", this.label);
+    }
+  }
+};
+</script>
