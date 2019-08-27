@@ -4,10 +4,12 @@
     <div>
       <ButtonDecrease
         :label="labels.decrease"
+        :count="count"
         @buttonClicked="handleDecrease"
       />
       <ButtonIncrease
         :label="labels.increase"
+        :count="count"
         @buttonClicked="handleIncrease"
       />
     </div>
@@ -49,13 +51,13 @@ export default {
     handleDecrease(message) {
       this.count--;
       this.messages.push(
-        `${new Date().getTime()}: "buttonClicked": ${message}`
+        `${new Date().getTime()}: "buttonClicked": ${JSON.stringify(message)}`
       );
     },
     handleIncrease(message) {
       this.count++;
       this.messages.push(
-        `${new Date().getTime()}: "buttonClicked": ${message}`
+        `${new Date().getTime()}: "buttonClicked": ${JSON.stringify(message)}`
       );
     }
   }

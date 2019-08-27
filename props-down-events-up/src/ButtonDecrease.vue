@@ -6,11 +6,15 @@
 export default {
   name: "ButtonDecrease",
   props: {
+    count: Number,
     label: String
   },
   methods: {
     handleClick() {
-      this.$emit("buttonClicked", this.label);
+      this.$emit("buttonClicked", {
+        label: this.label,
+        count: this.count--
+      });
     }
   }
 };
