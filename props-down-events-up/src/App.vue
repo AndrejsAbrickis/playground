@@ -14,9 +14,7 @@
       />
     </div>
     <fieldset title="Messages">
-      <legend>
-        Log Messages
-      </legend>
+      <legend>Log Messages</legend>
       <p v-for="(message, index) in messages" :key="index">
         {{ message }}
       </p>
@@ -33,17 +31,17 @@ export default {
 
   components: {
     ButtonDecrease,
-    ButtonIncrease
+    ButtonIncrease,
   },
 
   data() {
     return {
       labels: {
         decrease: "Decrease",
-        increase: "Increase"
+        increase: "Increase",
       },
       count: 0,
-      messages: []
+      messages: [],
     };
   },
 
@@ -59,8 +57,8 @@ export default {
       this.messages.push(
         `${new Date().getTime()}: "buttonClicked": ${JSON.stringify(message)}`
       );
-    }
-  }
+    },
+  },
 };
 </script>
 
